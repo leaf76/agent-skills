@@ -28,3 +28,7 @@ secrets/
 
 # Nested git metadata if any skill is still a separate clone
 **/.git/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
