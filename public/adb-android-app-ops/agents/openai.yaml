@@ -1,0 +1,4 @@
+interface:
+  display_name: "ADB Android App Ops"
+  short_description: "Monitor and control Android apps via adb"
+  default_prompt: "Use adb to monitor and operate Android apps; prefer scripts/adb_app.py for bounded commands and optional JSON output. When multiple devices are attached, require --serial or ANDROID_SERIAL. Avoid indefinite log streams."

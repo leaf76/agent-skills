@@ -1,0 +1,4 @@
+interface:
+  display_name: "Orchestration: Multimodal Looker"
+  short_description: "Analyze screenshots, UI, and visuals"
+  default_prompt: "Use $multimodal-looker to analyze the provided image(s) and report findings."

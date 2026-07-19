@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Fix Ship"
+  short_description: "Review, repair, validate, and ship repo changes safely."
+  default_prompt: "Use $review-fix-ship to review the current repository changes, fix actionable issues, verify the result, and take the work through the safest approved release path."

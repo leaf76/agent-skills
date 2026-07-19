@@ -1,0 +1,4 @@
+interface:
+  display_name: "Database Analysis"
+  short_description: "Analyze schema, SQL, plans, and migration risk"
+  default_prompt: "Use $database-analysis to review schema artifacts, SQL, EXPLAIN output, or migration risk safely."

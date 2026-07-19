@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Workflow"
+  short_description: "Structured workflow for risky or multi-step coding tasks"
+  default_prompt: "Use $dev-workflow to handle this coding task with a structured engineering workflow."

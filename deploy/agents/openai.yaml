@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deploy"
+  short_description: "Detect deployment path and ship safely"
+  default_prompt: "Use $deploy to review current uncommitted changes, determine whether this project deploys via GitHub Actions or direct tooling, then choose commit/push or direct deploy."

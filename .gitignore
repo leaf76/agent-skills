@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Dependencies / build artifacts if a skill vendors them
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+*.log
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+secrets/
+**/credentials.json
+**/auth.json
+.dev.vars
+
+# Third-party skill with its own git remote (clone separately):
+#   git clone https://github.com/op7418/guizang-ppt-skill.git guizang-ppt-skill
+/guizang-ppt-skill/
+
+# Nested git metadata if any skill is still a separate clone
+**/.git/

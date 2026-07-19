@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI/UX Design Review"
+  short_description: "Review, implement, and verify real UI changes"
+  default_prompt: "Use $uiux-design to review real UI evidence, implement the approved page changes, and verify the result with browser evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Layout Review"
+  short_description: "Review UI layout issues and draft fix briefs"
+  default_prompt: "Use $layout-review to analyze UI layout issues from existing evidence and draft an implementation-ready fix brief."

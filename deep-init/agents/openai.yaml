@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep Init"
+  short_description: "Bootstrap repo-specific AGENTS.md plans"
+  default_prompt: "Use $deep-init to inspect this project and plan a repo-specific AGENTS.md."

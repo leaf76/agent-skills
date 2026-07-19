@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "source_lang": "en",
+    "target_lang": "",
+    "version": "1.0.0",
+    "last_updated": ""
+  },
+  "common": {
+    "app_name": "",
+    "save": "",
+    "cancel": "",
+    "delete": "",
+    "edit": "",
+    "close": "",
+    "confirm": "",
+    "loading": "",
+    "error": "",
+    "success": "",
+    "warning": "",
+    "back": "",
+    "next": "",
+    "previous": "",
+    "submit": "",
+    "search": "",
+    "filter": "",
+    "sort": "",
+    "refresh": ""
+  },
+  "auth": {
+    "login": "",
+    "logout": "",
+    "signup": "",
+    "email": "",
+    "password": "",
+    "forgot_password": "",
+    "reset_password": "",
+    "remember_me": ""
+  },
+  "navigation": {
+    "home": "",
+    "dashboard": "",
+    "settings": "",
+    "profile": "",
+    "help": "",
+    "about": ""
+  },
+  "messages": {
+    "welcome": "",
+    "goodbye": "",
+    "confirm_delete": "",
+    "no_results": "",
+    "loading_failed": "",
+    "saved_successfully": "",
+    "deleted_successfully": ""
+  },
+  "errors": {
+    "required_field": "",
+    "invalid_email": "",
+    "password_too_short": "",
+    "network_error": "",
+    "server_error": "",
+    "not_found": "",
+    "unauthorized": ""
+  }
+}

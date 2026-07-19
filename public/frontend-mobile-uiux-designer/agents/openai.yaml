@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Mobile UI/UX Designer"
+  short_description: "Native mobile UX flows, wireframes, and UI specs"
+  default_prompt: "Design native iOS+Android UX: clarify goals/users/constraints, produce IA + user flows, create wireframes (prefer Pencil), and deliver UI specs (components, states, tokens) with implementation notes for iOS/Android engineers."

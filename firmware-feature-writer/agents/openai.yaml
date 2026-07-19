@@ -1,0 +1,4 @@
+interface:
+  display_name: "Firmware Feature Writer"
+  short_description: "Embedded firmware feature implementation workflow and review guidance"
+  default_prompt: "Help me implement firmware feature logic for an embedded target with safe timing and hardware-aware validation."
