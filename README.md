@@ -68,6 +68,10 @@ Cloudflare and OpenAI/Codex skills are included for convenience. They are not or
 5. Native mobile UX specs: `frontend-mobile-uiux-designer`. Web UX review: `uiux-design` / `layout-review`.
 6. Before commit or ship: `review-changes`, then `review-fix-ship` if you need the full release path.
 
+## Security
+
+Do not commit secrets. See [SECURITY.md](SECURITY.md) to report a vulnerability privately.
+
 ## License
 
 Original skills and docs: [MIT](LICENSE). Third-party skills: their upstream licenses ([NOTICE](NOTICE)).
