@@ -78,7 +78,7 @@ npm audit --audit-level=moderate
 snyk test --severity-threshold=high
 
 # Container image scanning (if applicable)
-trivy image --severity HIGH,CRITICAL zilurl:latest
+trivy image --severity HIGH,CRITICAL myapp:latest
 ```
 
 ### Step 4: Infrastructure Security Assessment

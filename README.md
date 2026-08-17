@@ -1,108 +1,73 @@
-# Shared Skill Routing Guide
+# agent-skills
 
-Updated: 2026-07-19
+Shared [Agent Skills](https://docs.cursor.com) library for Cursor, Claude Code, Codex, and similar tools.
 
-## 目標
-- 保持 `.system` 技能不變。
-- 僅整理非 `.system` 技能的呼叫順序與責任邊界，降低重複選擇。
-- 先以「文件化路由」降低歧義，不刪技能、不刪功能。
+Each top-level directory is one skill (`SKILL.md` plus optional `scripts/`, `references/`, and templates).
 
-## 不變更項目
-- provider / agent core mechanisms
-- 任何 agent 核心機制（`default` / `explorer` / `worker`）
+## Install
 
-## 非 `.system` 技能總覽（26）
+```bash
+git clone https://github.com/leaf76/agent-skills.git ~/.agents/skills
+```
 
-### 規劃與專案治理
-- `create-plan`
-- `project-planning`
-- `plan-mode`
+Point other clients at the same tree, or copy individual skill folders into:
 
-### 探索與盤點
-- `explore`
+- `~/.cursor/skills/<skill-name>/`
+- `~/.claude/skills/<skill-name>/`
+- `~/.codex/skills/<skill-name>/`
+- a project-local `.cursor/skills/` directory
 
-### UI/UX
-- `frontend-ui-ux-engineer`（Web / 一般前端）
-- `frontend-mobile-uiux-designer`（iOS/Android）
+Do not commit `.env`, API keys, or `auth.json`.
 
-### 文件與文件化
-- `document-writer`
-- `doc`
+## Original skills
 
-### 除錯與品質
-- `fix-bug`
-- `fix-lint`
-- `review-changes`
-- `security-threat-model`
-- `debug-memory-leak`
+Workflow and quality:
 
-### 驗證與觀測
-- `playwright`
-- `chrome-devtools-test`
-- `screenshot`
-- `computer-use`（原生桌面殼 / 明確要求；非 web 預設）
-- `hermes-chrome`（daily Chrome cookies/SSO）
-- `multimodal-looker`
+- `dev-workflow`, `fix-bug`, `fix-lint`, `write-tests`, `qa-tester`
+- `review-changes`, `review-fix-ship`, `security-audit`, `optimize`
+- `deep-init`, `plan-mode`, `refactor`, `explain`, `deploy`
 
-### 領域專精工具
-- `cloudflare-deploy`
-- `figma`
-- `openai-docs`
-- `imagegen`
-- `develop-web-game`
-- `adb-android-app-ops`
-- `yeet`
-- `rust-programmer`
-- `firmware-feature-writer`
+Domain guardrails:
 
-## 優先路由（Primary → Secondary）
+- `backend-api-auth-guardrails`
+- `database-data-guardrails`
+- `frontend-ui-guardrails`
+- `infra-ops-mobile-guardrails`
 
-1. 規劃
-   - `plan-mode`（先判斷是否需要計畫）
-   - `create-plan`（主要）
-   - `project-planning`（中長期計畫）
+UI / mobile / files:
 
-2. 探索
-   - `explore`（主要）
+- `frontend-mobile-uiux-designer`, `uiux-design`, `layout-review`
+- `adb-android-app-ops`, `image-file-reader`, `multimodal-looker`
+- `rust-programmer`, `firmware-feature-writer`
 
-3. UI/UX
-  - Web / 一般前端
-    - `frontend-ui-ux-engineer`
-    - 10 秒視窗屬於 soft window（判定觀察窗），非硬性中止；若稍後有可用產出且流程成功完成，應判定為成功。
-    - `429`/配額/授權/網路等依賴錯誤屬 dependency failure，不應誤標為 timeout。
-  - Mobile
-    - `frontend-mobile-uiux-designer`（iOS / Android）
+## Local-only skills
 
-4. 文件
-   - `document-writer`（一般文件）
-   - `doc`（DOCX 專用）
+These are documented here but need software on the machine. Skip them if the tools are not installed.
 
-5. 測試 / UI 證據
-   - Web：`hermes-chrome` → `playwright` / `chrome-devtools-test` / browser-e2e
-   - `screenshot`（僅系統截圖、無控制）
-   - `computer-use`（原生桌面殼或明確 computer use；非 web 預設）
-   - `multimodal-looker`（圖片/視覺回饋解析）
+| Skill | Needs |
+|-------|--------|
+| `hermes-chrome` | Hermes Chrome extension + local bridge |
+| `computer-use` | `lazy-desktop-mcp` |
+| `grok-x-search` | Grok CLI or `XAI_API_KEY` |
+| `source-command-collab-start` | session-collab MCP |
+| `gemini-cli` | local Gemini CLI |
+| `chronicle` | Chronicle screen history |
 
-## 重複職責回避規則
-- `doc` 不再與 `document-writer` 重疊為預設入口，依據是否為 `.docx` 需求切換。
-- `frontend-ui-ux-engineer` 與 `frontend-mobile-uiux-designer` 不重疊使用：前者先行 Web，一般行動端請直接用後者。
-- UI/UX 路由以平台與交付型態為主，不再加入外部模型專屬的前置路由層。
-- Web 證據不預設走 `computer-use`；`computer-use` 與 `screenshot` 分開：有 click/type 才用前者。
+## Third-party copies
 
-## 非 `.system` Skills 與 Agents
-- Agents（現況）: `default`, `explorer`, `worker`
-- Agents 流程不改，僅依技能路由分配任務。
+Cloudflare and OpenAI/Codex skills are included for convenience. They are not original work. See [NOTICE](NOTICE) and any `LICENSE.txt` inside the skill folder.
 
-## 後續建議
-- 保持路由規則 1 週觀察實際使用誤召率。
-- 觀察後再追加刪除候選（需你明確指令）。
+`guizang-ppt-skill/` is not in git. Clone it from [op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) if you need it.
 
----
+## Suggested routing
 
-## Version control
+1. Planning: `plan-mode` → `deep-init` when bootstrapping `AGENTS.md`.
+2. Non-trivial implementation: `dev-workflow` as the outer controller.
+3. Bugs: `fix-bug` (keep `dev-workflow` around it when the change is large).
+4. Web UI evidence: browser E2E / Chrome DevTools / Playwright. Use `computer-use` only for native desktop shells.
+5. Native mobile UX specs: `frontend-mobile-uiux-designer`. Web UX review: `uiux-design` / `layout-review`.
+6. Before commit or ship: `review-changes`, then `review-fix-ship` if you need the full release path.
 
-- Private remote: `https://github.com/leaf76/agent-skills` (canonical live path: `~/.agents/skills`)
-- Snapshot habit: `agent-vc snapshot --only agent-skills` (from `agent-ssot`)
-- Third-party `guizang-ppt-skill/` is gitignored — clone from `https://github.com/op7418/guizang-ppt-skill` if needed
-- Never commit `.env`, API keys, or `auth.json`
+## License
 
+Original skills and docs: [MIT](LICENSE). Third-party skills: their upstream licenses ([NOTICE](NOTICE)).

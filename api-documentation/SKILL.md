@@ -107,14 +107,14 @@ jsonschema -s schemas/user.json -i examples/user.json
    ```yaml
    openapi: 3.0.3
    info:
-     title: Zilurl API
+     title: Example API
      description: Personal finance management API
      version: 1.0.0
      contact:
        name: API Support
-       email: api@zilurl.com
+       email: api@example.com
    servers:
-     - url: https://api.zilurl.com/v1
+     - url: https://api.example.com/v1
        description: Production server
    ```
 
@@ -218,7 +218,7 @@ Provide documentation in multiple formats:
 # api/openapi.yaml
 openapi: 3.0.3
 info:
-  title: Zilurl API
+  title: Example API
   version: 1.0.0
 paths:
   /api/v1/ledgers:

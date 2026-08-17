@@ -1,0 +1,30 @@
+Third-party skill content
+=========================
+
+This repository mixes original skills with copies of upstream Agent Skills.
+Original content is MIT-licensed (see LICENSE). Third-party skills keep their
+upstream licenses. If a skill directory includes LICENSE.txt, that file wins
+for that directory.
+
+Cloudflare (typically Apache-2.0)
+---------------------------------
+agents-sdk, cloudflare, cloudflare-deploy, cloudflare-email-service,
+cloudflare-one, cloudflare-one-migrations, durable-objects, sandbox-sdk,
+turnstile-spin, web-perf, workers-best-practices, wrangler
+
+Upstream: https://github.com/cloudflare/skills (and related Cloudflare docs)
+
+OpenAI / Codex skills (Apache-2.0 where LICENSE.txt is present)
+--------------------------------------------------------------
+atlas, chatgpt-apps, create-plan, develop-web-game, doc, figma, imagegen,
+openai-docs, playwright, screenshot, security-threat-model, yeet
+
+browser-use
+-----------
+Points at the Browser Use harness. See:
+https://github.com/browser-use/browser-harness
+
+Not vendored here
+-----------------
+guizang-ppt-skill is gitignored. Clone separately from:
+https://github.com/op7418/guizang-ppt-skill

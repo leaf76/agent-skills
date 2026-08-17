@@ -49,7 +49,7 @@ Stop and ask the user if:
 
 Before any commit or push, follow the review workflow in:
 
-- `/Users/cy76/.agents/skills/review-changes/SKILL.md`
+- `review-changes/SKILL.md` (sibling skill in this library)
 
 Minimum required checks:
 

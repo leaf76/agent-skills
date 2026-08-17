@@ -5,7 +5,7 @@ description: Use when frontend, UI, browser automation, live UI, screenshot, sna
 
 # Frontend UI Guardrails
 
-This is a domain-specific expansion of `/Users/cy76/.codex/AGENTS.md`. It may add frontend and UI requirements, but it must never weaken `AGENTS.md`, `SECURITY`, secrets handling, production safety, or destructive-command restrictions.
+This is a domain-specific expansion of the project's `AGENTS.md` (or equivalent agent rules). It may add frontend and UI requirements, but it must never weaken `AGENTS.md`, `SECURITY`, secrets handling, production safety, or destructive-command restrictions.
 
 ## Core Rules
 

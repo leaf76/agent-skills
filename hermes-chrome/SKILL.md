@@ -8,7 +8,7 @@ description: Drive the user's daily Chrome via Hermes Chrome (extension + local 
 ## When to use
 
 - Need **user's real Chrome** cookies / SSO / already-open tabs
-- Gold / TradingView capture, logged-in smoke, workspace isolation
+- Logged-in capture, SSO smoke, already-open workspace tabs
 - Download with cookie jar, local URL/file safety checks
 - User says hermes-chrome / daily Chrome / bridge 19876
 
@@ -32,7 +32,7 @@ description: Drive the user's daily Chrome via Hermes Chrome (extension + local 
 | Piece | Path |
 |-------|------|
 | CLI | `~/.hermes/scripts/hermes-chrome.sh` or repo `scripts/hermes-chrome.sh` |
-| Repo | `~/WorkSpace/sideProject/others_projects/hermes-chrome` |
+| Repo | local Hermes Chrome checkout (CLI usually under `~/.hermes/scripts/`) |
 | Bridge | `http://127.0.0.1:19876` |
 | Runtime | `~/.hermes/run/hermes-chrome/` |
 | Downloads | `~/.hermes/run/hermes-chrome/downloads/` |
@@ -69,9 +69,8 @@ $CLI stop   # closes Hermes workspace tabs
 
 ## Capture / download notes
 
-- `captureVisibleTab` may briefly activate the target tab; put agent/TV charts in a **separate window** when possible
-- `prefer=gc|nq` is a **title finder** for gold only (titles should start `GC1!` / `NQ1!`)
-- Gold: `TV_CAPTURE_BACKEND=hermes-chrome`, `TV_AUTO_OPEN_TABS=1` (default) opens missing charts
+- `captureVisibleTab` may briefly activate the target tab; put capture targets in a **separate window** when possible
+- Optional title filters can target known window titles; do not hardcode product-specific symbols
 - `download` runs check → save → analyze unless `--no-check` / `--no-analyze` / `--force`
 - `analyze` is local heuristics (not antivirus)
 

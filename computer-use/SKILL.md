@@ -14,7 +14,7 @@ description: >
 # Computer Use (lazy-desktop-mcp)
 
 Local-first desktop automation through **lazy-desktop-mcp** MCP tools.  
-Implementer: repo `~/WorkSpace/sideProject/mcp_projects/lazy_desktop_mcp` (npm `lazy-desktop-mcp`).
+Implementer: npm package `lazy-desktop-mcp`.
 
 Load references only as needed:
 

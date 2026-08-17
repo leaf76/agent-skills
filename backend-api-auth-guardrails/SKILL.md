@@ -5,7 +5,7 @@ description: Use when backend, API, authentication, authorization, session, toke
 
 # Backend API Auth Guardrails
 
-This is a domain-specific expansion of `/Users/cy76/.codex/AGENTS.md`. It may add backend, API, and auth requirements, but it must never weaken `AGENTS.md`, `SECURITY`, secrets handling, input validation, production safety, or destructive-command restrictions.
+This is a domain-specific expansion of the project's `AGENTS.md` (or equivalent agent rules). It may add backend, API, and auth requirements, but it must never weaken `AGENTS.md`, `SECURITY`, secrets handling, input validation, production safety, or destructive-command restrictions.
 
 ## API Contracts
 
@@ -59,7 +59,7 @@ Use this section when **one identity provider** serves **multiple browser apps**
 - **Deploy order:** ship RP front-channel endpoints **before or with** IdP fan-out; missing endpoints just 404 and leave that origin signed in.
 - **Consumer serde:** IdP JSON may return `"profile": null`. `#[serde(default)]` handles **missing** fields, **not** null — use null-as-default or `Option` or consumers will 5xx on login callbacks for new accounts.
 - **Email gates:** some products require **verified email** for shared-auth login; unverified E2E accounts pass central login but fail RP callback with product-specific errors.
-- **Test hygiene:** cookie assertions must use **exact cookie names** (e.g. `session` must not match `zillurl_page_session` via substring).
+- **Test hygiene:** cookie assertions must use **exact cookie names** (e.g. `session` must not match `app_page_session` via substring).
 
 ### Minimal verification
 

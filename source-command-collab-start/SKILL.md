@@ -15,4 +15,4 @@ Call `mcp__session-collab__collab_session_start` with:
 - restore_context: false by default
 - force_new: true only to skip reuse
 
-Then prefer `collab_claim` action=create (batch files). check is optional. Memory = short highlights only (not AI-Memory vault).
+Then prefer `collab_claim` action=create (batch files). check is optional. Memory = short highlights only (not a long-term vault).

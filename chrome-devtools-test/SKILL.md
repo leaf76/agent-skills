@@ -9,9 +9,9 @@ Goal: quickly verify user flows and collect actionable evidence (console, networ
 
 ## Prerequisites (no hardcoded secrets)
 - Read test env config from environment variables when available:
-  - `ZILLURL_TEST_BASE_URL`
-  - `ZILLURL_TEST_EMAIL`
-  - `ZILLURL_TEST_PASSWORD`
+  - `TEST_BASE_URL`
+  - `TEST_EMAIL`
+  - `TEST_PASSWORD`
 - If any are missing, ask the user (do not invent credentials and do not write them into files).
 
 ## Workflow

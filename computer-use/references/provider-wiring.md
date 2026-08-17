@@ -6,7 +6,7 @@ Agent-layer skill only. Wiring is optional per client; if tools are absent, fail
 
 | Piece | Location |
 |-------|----------|
-| Source repo | `~/WorkSpace/sideProject/mcp_projects/lazy_desktop_mcp` |
+| Source repo | clone of `lazy-desktop-mcp` |
 | npm package | `lazy-desktop-mcp` |
 | Dev policy template | `config/policy.dev.json` (from `client-config.json`) |
 | Sync clients | `npm run sync:clients` in the repo (Codex + OpenCode by default) |
